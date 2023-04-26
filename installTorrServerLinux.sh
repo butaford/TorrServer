@@ -62,7 +62,7 @@ function getLang() {
 }
 
 function getIP() {
-  [ -z "`which dig`" ] && serverIP=$(host myip.opendns.com resolver1.opendns.com | tail -n1 | cut -d' ' -f4-) || serverIP=$(dig +short myip.opendns.com @resolver1.opendns.com)
+  serverIP=$(curl -4s 2ip.io)
   # echo $serverIP
 }
 
